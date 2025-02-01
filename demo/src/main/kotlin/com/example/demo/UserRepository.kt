@@ -11,7 +11,7 @@ interface UserRepository : CrudRepository<User?, Int?> {
 
     @Modifying
     @Transactional
-    @Query("INSERT INTO users (id, password, name, email) VALUES (:id, :password, :name, :email)", nativeQuery = true)
+    @Query("INSERT INTO users (id, password, name, email, balance) VALUES (:id, :password, :name, :email, 1000)", nativeQuery = true)
     fun addUser(
         @Param("id") id: String,
         @Param("password") password: String,
@@ -26,4 +26,20 @@ interface UserRepository : CrudRepository<User?, Int?> {
 
     @Query("SELECT * FROM users", nativeQuery = true)
     fun allUser(): List<User>
+
+    @Transactional
+    @Modifying
+    @Query(
+        """
+        UPDATE users u1, users u2 
+        SET u1.deposit = u1.deposit - :amount, 
+            u2.deposit = u2.deposit + :amount
+        WHERE u1.id = :fromUser AND u2.id = :toUser AND u1.deposit >= :amount
+        """, nativeQuery = true
+    )
+    fun transfer(
+        @Param("from") from: String,
+        @Param("to") to: String,
+        @Param("amount") amount: Long
+    ): Int
 }

@@ -29,6 +29,7 @@ class MainController {
             model.addAttribute("id", user!!.id)
             model.addAttribute("name", user.name)
             model.addAttribute("email", user.email)
+            model.addAttribute("balance", user.balance)
         }
         return "init"
     }
@@ -107,5 +108,55 @@ class MainController {
         }
         model.addAttribute("users", userRepository!!.allUser())
         return "admin"
+    }
+
+    @GetMapping("/transfer")
+    fun transfer(
+        model: Model,
+        session: HttpSession
+    ): String{
+        if(session.getAttribute("id")==null){
+            return "redirect:/"
+        }
+        val id: String = session.getAttribute("id").toString()
+        val user: User? = userRepository!!.findUser(id)
+        if(user==null){
+            return "redirect:/"
+        }
+        model.addAttribute("balance", user.balance)
+        return "transfer"
+    }
+
+    @PostMapping("/transfer")
+    fun processTransfer(
+        @RequestParam toID: String,
+        @RequestParam amount: Long,
+        model: Model,
+        session: HttpSession
+    ): String {
+        if(session.getAttribute("id")==null){
+            return "redirect:/"
+        }
+        val id: String = session.getAttribute("id").toString()
+        val fromUser: User? = userRepository!!.findUser(id)
+        if(fromUser==null){
+            return "redirect:/"
+        }
+        val toUser: User? = userRepository.findUser(toID)
+        if(toUser==null){
+            return "redirect:/"
+        }
+        val success: Int = userRepository.transfer(fromUser.id, toUser.id, amount)
+        val message = if (success==2) {
+            "Success"
+        } else {
+            "Failed, Insufficient balance."
+        }
+
+        model.addAttribute("fromUser", fromUser)
+        model.addAttribute("message", message)
+        model.addAttribute("success", success==2)
+
+        return "transfer"  // 메시지를 포함한 템플릿 렌더링
     }
 }
