@@ -8,22 +8,20 @@
 <body>
 <a>Current Balance : {{balance}}WON</a><br>
 <form method="post" action="/transfer">
-    <label>Transfer ID:</label><br>
-    <input type="text" name="toID" required><br>
     <div>
         <label for="toID">target ID:</label>
         <input type="text" id="toID" name="toID" required />
     </div>
     <div>
-        <label for="amount">송금할 금액:</label>
+        <label for="amount">Amount(WON):</label>
         <input type="number" id="amount" name="amount" min="1" required />
     </div>
     <button type="submit">Transfer</button>
-    {{#message}}
-        <div style="color: {{#success}}green{{/success}}{{^success}}red{{/success}};">
-            {{message}}
-        </div>
-    {{/message}}
 </form>
+{{#message}}
+    <div style="color: {{#success}}green{{/success}}{{^success}}red{{/success}};">
+        {{message}}
+    </div>
+{{/message}}
 </body>
 </html>
