@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.DemoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-01T02:41:50" hostname="DESKTOP-5AUDUKS" time="0.425">
+<testsuite name="com.example.demo.DemoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-01T04:08:53" hostname="DESKTOP-5AUDUKS" time="0.429">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.demo.DemoApplicationTests" time="0.425"/>
-  <system-out><![CDATA[11:41:29.600 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:41:29.794 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.LoginApplication for test class com.example.demo.DemoApplicationTests
+  <testcase name="contextLoads()" classname="com.example.demo.DemoApplicationTests" time="0.429"/>
+  <system-out><![CDATA[13:08:29.819 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:08:29.987 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.LoginApplication for test class com.example.demo.DemoApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,42 +14,42 @@
 
  :: Spring Boot ::                (v3.4.1)
 
-2025-02-01T11:41:30.284+09:00  INFO 21236 --- [demo] [    Test worker] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.13 with PID 21236 (started by my in C:\Users\my\Downloads\login_spring\demo)
-2025-02-01T11:41:30.285+09:00  INFO 21236 --- [demo] [    Test worker] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
-2025-02-01T11:41:31.082+09:00  INFO 21236 --- [demo] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-01T11:41:31.140+09:00  INFO 21236 --- [demo] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
-2025-02-01T11:41:31.526+09:00  INFO 21236 --- [demo] [    Test worker] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
-2025-02-01T11:41:31.531+09:00  INFO 21236 --- [demo] [    Test worker] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-2025-02-01T11:41:31.565+09:00  INFO 21236 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : Testcontainers version: 1.20.4
-2025-02-01T11:41:31.790+09:00  INFO 21236 --- [demo] [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
-2025-02-01T11:41:32.097+09:00  INFO 21236 --- [demo] [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
-2025-02-01T11:41:32.098+09:00  INFO 21236 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
-2025-02-01T11:41:32.111+09:00  INFO 21236 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
+2025-02-01T13:08:30.419+09:00  INFO 4996 --- [demo] [    Test worker] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.13 with PID 4996 (started by my in C:\Users\my\Downloads\login_spring\demo)
+2025-02-01T13:08:30.421+09:00  INFO 4996 --- [demo] [    Test worker] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-02-01T13:08:31.211+09:00  INFO 4996 --- [demo] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-01T13:08:31.268+09:00  INFO 4996 --- [demo] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interface.
+2025-02-01T13:08:31.630+09:00  INFO 4996 --- [demo] [    Test worker] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
+2025-02-01T13:08:31.633+09:00  INFO 4996 --- [demo] [    Test worker] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-02-01T13:08:31.655+09:00  INFO 4996 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : Testcontainers version: 1.20.4
+2025-02-01T13:08:31.845+09:00  INFO 4996 --- [demo] [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-02-01T13:08:32.111+09:00  INFO 4996 --- [demo] [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2025-02-01T13:08:32.112+09:00  INFO 4996 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2025-02-01T13:08:32.121+09:00  INFO 4996 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
   Server Version: 27.4.0
   API Version: 1.47
   Operating System: Docker Desktop
   Total Memory: 7893 MB
   Labels: 
     com.docker.desktop.address=npipe://\\.\pipe\docker_cli
-2025-02-01T11:41:32.134+09:00  INFO 21236 --- [demo] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
-2025-02-01T11:41:32.617+09:00  INFO 21236 --- [demo] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: f357cd3e41b2756cd1669c5565f4bb90cceab1515fd0c6d5b1ffbc9b48002331
-2025-02-01T11:41:33.288+09:00  INFO 21236 --- [demo] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT1.1541567S
-2025-02-01T11:41:33.293+09:00  INFO 21236 --- [demo] [    Test worker] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
-2025-02-01T11:41:33.294+09:00  INFO 21236 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
-2025-02-01T11:41:33.294+09:00  INFO 21236 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
-2025-02-01T11:41:33.297+09:00  INFO 21236 --- [demo] [    Test worker] tc.mysql:latest                          : Creating container for image: mysql:latest
-2025-02-01T11:41:33.475+09:00  INFO 21236 --- [demo] [    Test worker] tc.mysql:latest                          : Container mysql:latest is starting: 7e776de3db572afae966e84cd69d07d3f6a84b2d2359b9eaad61187115ff8198
-2025-02-01T11:41:33.857+09:00  INFO 21236 --- [demo] [    Test worker] tc.mysql:latest                          : Waiting for database connection to become available at jdbc:mysql://localhost:14800/test using query 'SELECT 1'
-2025-02-01T11:41:47.133+09:00  INFO 21236 --- [demo] [    Test worker] tc.mysql:latest                          : Container mysql:latest started in PT13.8360582S
-2025-02-01T11:41:47.134+09:00  INFO 21236 --- [demo] [    Test worker] tc.mysql:latest                          : Container is started (JDBC URL: jdbc:mysql://localhost:14800/test)
-2025-02-01T11:41:47.293+09:00  INFO 21236 --- [demo] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-01T11:41:47.374+09:00  INFO 21236 --- [demo] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-02-01T11:41:47.421+09:00  INFO 21236 --- [demo] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-02-01T11:41:47.765+09:00  INFO 21236 --- [demo] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-01T11:41:47.803+09:00  INFO 21236 --- [demo] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-02-01T11:41:47.922+09:00  INFO 21236 --- [demo] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43cc7951
-2025-02-01T11:41:47.923+09:00  INFO 21236 --- [demo] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-02-01T11:41:47.997+09:00  INFO 21236 --- [demo] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-02-01T13:08:32.141+09:00  INFO 4996 --- [demo] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
+2025-02-01T13:08:32.539+09:00  INFO 4996 --- [demo] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: 304bfaf35ad5d3fea992ff5443c75df32dd8e636af35531fdb8b9895fca70e56
+2025-02-01T13:08:33.421+09:00  INFO 4996 --- [demo] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT1.2793961S
+2025-02-01T13:08:33.426+09:00  INFO 4996 --- [demo] [    Test worker] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-02-01T13:08:33.426+09:00  INFO 4996 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
+2025-02-01T13:08:33.427+09:00  INFO 4996 --- [demo] [    Test worker] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
+2025-02-01T13:08:33.429+09:00  INFO 4996 --- [demo] [    Test worker] tc.mysql:latest                          : Creating container for image: mysql:latest
+2025-02-01T13:08:33.685+09:00  INFO 4996 --- [demo] [    Test worker] tc.mysql:latest                          : Container mysql:latest is starting: 96fd1dcfdc8b3711cd518d796c5be9d9de258a458d11e8708ae4045b838cd92c
+2025-02-01T13:08:34.155+09:00  INFO 4996 --- [demo] [    Test worker] tc.mysql:latest                          : Waiting for database connection to become available at jdbc:mysql://localhost:2070/test using query 'SELECT 1'
+2025-02-01T13:08:50.637+09:00  INFO 4996 --- [demo] [    Test worker] tc.mysql:latest                          : Container mysql:latest started in PT17.2072557S
+2025-02-01T13:08:50.637+09:00  INFO 4996 --- [demo] [    Test worker] tc.mysql:latest                          : Container is started (JDBC URL: jdbc:mysql://localhost:2070/test)
+2025-02-01T13:08:50.782+09:00  INFO 4996 --- [demo] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-01T13:08:50.857+09:00  INFO 4996 --- [demo] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-01T13:08:50.912+09:00  INFO 4996 --- [demo] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-01T13:08:51.266+09:00  INFO 4996 --- [demo] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-01T13:08:51.304+09:00  INFO 4996 --- [demo] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-01T13:08:51.432+09:00  INFO 4996 --- [demo] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d33795c
+2025-02-01T13:08:51.435+09:00  INFO 4996 --- [demo] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-01T13:08:51.507+09:00  INFO 4996 --- [demo] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.2
@@ -57,11 +57,11 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-01T11:41:48.865+09:00  INFO 21236 --- [demo] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-01T11:41:49.043+09:00  INFO 21236 --- [demo] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-01T11:41:49.485+09:00  INFO 21236 --- [demo] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-02-01T11:41:49.638+09:00  WARN 21236 --- [demo] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-01T11:41:50.058+09:00  INFO 21236 --- [demo] [    Test worker] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 20.1 seconds (process running for 21.921)
+2025-02-01T13:08:52.391+09:00  INFO 4996 --- [demo] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-01T13:08:52.560+09:00  INFO 4996 --- [demo] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-01T13:08:52.966+09:00  INFO 4996 --- [demo] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-01T13:08:53.112+09:00  WARN 4996 --- [demo] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-01T13:08:53.534+09:00  INFO 4996 --- [demo] [    Test worker] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 23.39 seconds (process running for 24.685)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
