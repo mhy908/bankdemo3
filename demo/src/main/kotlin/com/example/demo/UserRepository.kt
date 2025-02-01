@@ -34,7 +34,7 @@ interface UserRepository : CrudRepository<User?, Int?> {
         UPDATE users u1, users u2 
         SET u1.deposit = u1.deposit - :amount, 
             u2.deposit = u2.deposit + :amount
-        WHERE u1.id = :fromUser AND u2.id = :toUser AND u1.deposit >= :amount
+        WHERE u1.id = :from AND u2.id = :to AND u1.deposit >= :amount
         """, nativeQuery = true
     )
     fun transfer(
