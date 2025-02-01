@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page - User List</title>
+</head>
+<body>
+<form method="post" action="/login">
+    <label>ID:</label><br>
+    <input type="text" name="id" required><br>
+    <label>Password:</label><br>
+    <input type="text" name="password" required><br><br>
+    <button type="submit">Login</button>
+</form>
+{{#error}}
+    <p style="color:red">ID or Password is incorrect</p>
+{{/error}}
+{{^error}}
+    <br>
+{{/error}}
+<a href="/signup">Sign Up</a>
+</body>
+</html>

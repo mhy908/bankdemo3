@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page - User List</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+{{#loginned}}
+    <a>Current Log In Information : ID = {{id}}, name = {{name}}, email = {{email}}</a><br>
+    <a href="/logout">Log Out</a>
+{{/loginned}}
+{{^loginned}}
+    <a href="/login">Log In</a>
+{{/loginned}}
+
+</body>
+</html>
