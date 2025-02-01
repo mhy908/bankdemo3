@@ -156,7 +156,7 @@ class MainController {
         model.addAttribute("fromUser", fromUser)
         model.addAttribute("message", message)
         model.addAttribute("success", success==2)
-        model.addAttribute("balance", fromUser.balance)
+        model.addAttribute("balance", userRepository.findUser(id)!!.balance)
 
         return "transfer"  // 메시지를 포함한 템플릿 렌더링
     }
