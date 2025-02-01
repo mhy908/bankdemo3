@@ -27,7 +27,7 @@
 #volumes:
 #  mysql-data:
 
-  services:
+services:
   springapp:
     build: .
     container_name: springapp-container
