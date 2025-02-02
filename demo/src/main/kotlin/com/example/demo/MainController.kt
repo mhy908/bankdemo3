@@ -109,7 +109,7 @@ class MainController {
         model.addAttribute("users", userRepository!!.allUser())
         return "admin"
     }
-    /*
+
     @GetMapping("/transfer")
     fun transfer(
         @RequestParam msg: Char?,
@@ -163,5 +163,5 @@ class MainController {
         } else {
             return "redirect:/transfer?msg=N"
         }
-    }*/
+    }
 }
