@@ -109,9 +109,10 @@ class MainController {
         model.addAttribute("users", userRepository!!.allUser())
         return "admin"
     }
-
+    /*
     @GetMapping("/transfer")
     fun transfer(
+        @RequestParam msg: Char?,
         model: Model,
         session: HttpSession
     ): String{
@@ -124,6 +125,16 @@ class MainController {
             return "redirect:/"
         }
         model.addAttribute("balance", user.balance)
+        if(msg!=null){
+            if(msg=='Y'){
+                model.addAttribute("message", "Success")
+                model.addAttribute("success", true)
+            }
+            if(msg=='N'){
+                model.addAttribute("message", "Failed")
+                model.addAttribute("success", false)
+            }
+        }
         return "transfer"
     }
 
@@ -144,20 +155,13 @@ class MainController {
         }
         val toUser: User? = userRepository.findUser(toID)
         if(toUser==null){
-            return "redirect:/"
+            return "redirect:/transfer?msg=N"
         }
         val success: Int = userRepository.transfer(fromUser.id, toUser.id, amount)
-        val message = if (success==2) {
-            "Success"
+        if (success==2) {
+            return "redirect:/transfer?msg=Y"
         } else {
-            "Failed, Insufficient balance."
+            return "redirect:/transfer?msg=N"
         }
-
-        model.addAttribute("fromUser", fromUser)
-        model.addAttribute("message", message)
-        model.addAttribute("success", success==2)
-        model.addAttribute("balance", userRepository.findUser(id)!!.balance)
-
-        return "transfer"  // 메시지를 포함한 템플릿 렌더링
-    }
+    }*/
 }
