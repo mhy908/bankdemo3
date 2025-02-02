@@ -27,22 +27,17 @@ interface UserRepository : CrudRepository<User?, Int?> {
     @Query("SELECT * FROM users", nativeQuery = true)
     fun allUser(): List<User>
 
-    @Transactional
     @Modifying
     @Query(
-        """
-        UPDATE users SET balance = balance - :amount WHERE id = :from AND balance >= :amount;
-        UPDATE users SET balance = balance + :amount WHERE id = :to;
-        """, nativeQuery = true
+        "UPDATE users SET balance = balance + :amount WHERE id = :id AND balance + :amount >= 0", nativeQuery = true
     )
-    fun transfer(
-        @Param("from") from: String,
-        @Param("to") to: String,
+    fun changeBalance(
+        @Param("id") from: String,
         @Param("amount") amount: Long
     ): Int
 
     @Query(
-        "SELECT balance FROM users WHERE id = :id FOR UPDATE;", nativeQuery = true
+        "SELECT balance FROM users WHERE id = :id FOR UPDATE", nativeQuery = true
     )
     fun findUserwithlock(
         @Param("id") id: String

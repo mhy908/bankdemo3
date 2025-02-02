@@ -17,6 +17,9 @@ class TransferService {
 
         if (fromUser == null || toUser == null) return false
 
-        return userRepository.transfer(fromId, toId, amount)==2
+        val fs: Int = userRepository.changeBalance(fromId, -amount)
+        val ts: Int = userRepository.changeBalance(toId, amount)
+
+        return fs==1&&ts==1
     }
 }
