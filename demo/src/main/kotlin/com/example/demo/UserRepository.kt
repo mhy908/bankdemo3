@@ -31,10 +31,10 @@ interface UserRepository : CrudRepository<User?, Int?> {
     @Modifying
     @Query(
         """
-        UPDATE users u1, users u2 
-        SET u1.balance = u1.balance - :amount, 
-            u2.balance = u2.balance + :amount
-        WHERE u1.id = :from AND u2.id = :to AND u1.balance >= :amount
+        SELECT balance FROM users WHERE id = :from FOR UPDATE;
+        SELECT balance FROM users WHERE id = :to FOR UPDATE;
+        UPDATE users SET balance = balance - :amount WHERE id = :from AND balance >= :amount
+        UPDATE users SET balance = balance + :amount WHERE id = :to
         """, nativeQuery = true
     )
     fun transfer(
