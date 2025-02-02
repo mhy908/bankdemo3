@@ -1,5 +1,5 @@
 package com.example.demo
-import jakarta.transaction.Transactional
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.CrudRepository
@@ -31,8 +31,6 @@ interface UserRepository : CrudRepository<User?, Int?> {
     @Modifying
     @Query(
         """
-        SELECT balance FROM users WHERE id = :from FOR UPDATE;
-        SELECT balance FROM users WHERE id = :to FOR UPDATE;
         UPDATE users SET balance = balance - :amount WHERE id = :from AND balance >= :amount
         UPDATE users SET balance = balance + :amount WHERE id = :to
         """, nativeQuery = true
@@ -42,4 +40,11 @@ interface UserRepository : CrudRepository<User?, Int?> {
         @Param("to") to: String,
         @Param("amount") amount: Long
     ): Int
+
+    @Query(
+        "SELECT balance FROM users WHERE id = :id FOR UPDATE;", nativeQuery = true
+    )
+    fun findUserwithlock(
+        @Param("id") id: String
+    ): Long?
 }
