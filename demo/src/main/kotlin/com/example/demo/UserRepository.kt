@@ -31,8 +31,8 @@ interface UserRepository : CrudRepository<User?, Int?> {
     @Modifying
     @Query(
         """
-        UPDATE users SET balance = balance - :amount WHERE id = :from AND balance >= :amount
-        UPDATE users SET balance = balance + :amount WHERE id = :to
+        UPDATE users SET balance = balance - :amount WHERE id = :from AND balance >= :amount;
+        UPDATE users SET balance = balance + :amount WHERE id = :to;
         """, nativeQuery = true
     )
     fun transfer(
