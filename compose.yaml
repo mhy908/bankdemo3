@@ -32,10 +32,10 @@ services:
     build: .
     container_name: springapp-container
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql.railway.internal:3306/railway  # Railway에서 제공하는 DATABASE_URL 환경 변수를 사용
-      SPRING_DATASOURCE_USERNAME: root  # Railway에서 제공하는 DATABASE_USERNAME 환경 변수
-      SPRING_DATASOURCE_PASSWORD: VhKFTnxsqhSqPdmQMDSpNiDDnVHecBwh  # Railway에서 제공하는 DATABASE_PASSWORD 환경 변수
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql.railway.internal:3306/railway
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: VhKFTnxsqhSqPdmQMDSpNiDDnVHecBwh
     ports:
       - "8080:8080"
     depends_on:
-      - mysql  # MySQL 서비스는 필요 없으므로, 제거
+      - mysql

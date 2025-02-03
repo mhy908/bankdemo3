@@ -15,11 +15,14 @@ class TransferService {
         val fromUser = userRepository!!.findUserwithlock(fromId)
         val toUser = userRepository.findUserwithlock(toId)
 
-        if (fromUser == null || toUser == null) return false
+        if (fromUser == null || toUser == null || amount<0) return false
 
         val fs: Int = userRepository.changeBalance(fromId, -amount)
+
+        if(fs==0) return false
+
         val ts: Int = userRepository.changeBalance(toId, amount)
 
-        return fs==1&&ts==1
+        return ts==1
     }
 }
