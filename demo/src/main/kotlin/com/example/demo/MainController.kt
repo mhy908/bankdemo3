@@ -3,13 +3,9 @@ package com.example.demo
 import jakarta.servlet.http.HttpSession
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.ui.Model
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import org.springframework.web.bind.annotation.*
 
 @Controller // This means that this class is a Controller
 class MainController {
@@ -42,24 +38,6 @@ class MainController {
         session: HttpSession
     ): String {
         return "login"
-    }
-    @PostMapping("/login")
-    fun logintrial(
-        @RequestParam id: String,
-        @RequestParam password: String,
-        model: Model,
-        session: HttpSession
-    ): String {
-        val user: User? = userRepository!!.findUser(id)
-        if(user==null || !BCryptPasswordEncoder().matches(password, user.password)){
-            model.addAttribute("error", true)
-            return "login"
-        }
-        model.addAttribute("error", false)
-        model.addAttribute("name", user.name)
-        session.setAttribute("loginned", true)
-        session.setAttribute("id", user.id)
-        return "redirect:/"
     }
 
     @GetMapping("/signup")

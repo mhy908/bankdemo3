@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page - User List</title>
+    <script>
+        async function handleLogin(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const id = formData.get("id");
+            const password = formData.get("password");
+
+            const response = await fetch("/users/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id, password })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                window.location.href = "/";
+            } else {
+                document.getElementById("error").innerText = result.error;
+            }
+        }
+    </script>
 </head>
 <body>
 <form method="post" action="/login">
@@ -13,12 +36,7 @@
     <input type="text" name="password" required><br><br>
     <button type="submit">Login</button>
 </form>
-{{#error}}
-    <p style="color:red">ID or Password is incorrect</p>
-{{/error}}
-{{^error}}
-    <br>
-{{/error}}
+<p id="error" style="color:red"></p>
 <a href="/signup">Sign Up</a>
 </body>
 </html>
