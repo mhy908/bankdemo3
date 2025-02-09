@@ -12,17 +12,17 @@
             const id = formData.get("id");
             const password = formData.get("password");
 
-            const response = await fetch("/users/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ id, password })
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                window.location.href = "/";
-            } else {
+            try{
+                const response = await fetch("/users/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ id, password })
+                });
+                if (response.ok) {
+                    window.location.href = "/";
+                }
+            }
+            catch{
                 document.getElementById("error").innerText = "Login failed";
             }
         }
